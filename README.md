@@ -1,1 +1,2 @@
-<h1>This is a remake of the first project Made by Edidiong Obodom(The Vault Banking Web app) </h1>
+<h1>The-Vault_Remastered</h1>
+<p>This is a remake of the first project Made by me(The Vault Banking Web app) using  react for the frontend</p>
