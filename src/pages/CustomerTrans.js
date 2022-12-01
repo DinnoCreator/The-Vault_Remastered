@@ -17,7 +17,7 @@ const CustomerTransaction = () => {
   // Checks if user is authenticated
   const getUser = useCallback(async () => {
     try {
-      await fetch(`http://localhost:5000/custran/${location.state}`, {
+      await fetch(`https://thevault-api.onrender.com/custran/${location.state}`, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       })
@@ -123,7 +123,7 @@ const CustomerTransaction = () => {
                 try {
                   const id = tansactionDetails.parent_transaction_id;
 
-                  await fetch("http://localhost:5000/reverse", {
+                  await fetch("https://thevault-api.onrender.com/reverse", {
                     method: "DELETE",
                     headers: {
                       "Content-Type": "application/json",
