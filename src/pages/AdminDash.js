@@ -11,7 +11,7 @@ const AdminDashboard = () => {
 
   const getUser = useCallback(async () => {
     try {
-      await fetch("http://localhost:5000/customers", {
+      await fetch("https://thevault-api.onrender.com/customers", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       })
