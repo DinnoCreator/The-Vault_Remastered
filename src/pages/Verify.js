@@ -30,7 +30,7 @@ function Verify() {
       const code = confirmationCode;
 
       //api call for sending the user data to the backend
-      await fetch("http://localhost:5000/create", {
+      await fetch("https://thevault-api.onrender.com/create", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
