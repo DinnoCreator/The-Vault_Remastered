@@ -12,7 +12,7 @@ function NewAcc() {
   // Checks if user is authenticated
   const getUser = useCallback(async () => {
     try {
-      await fetch("http://localhost:5000/user", {
+      await fetch("https://thevault-api.onrender.com/user", {
         method: "GET",
         headers: { authorization: sessionStorage.getItem("token") },
       })
@@ -66,7 +66,7 @@ function NewAcc() {
       const password = userPassword;
 
       //api call for sending the user data to the backend
-      await fetch("http://localhost:5000/newaccount", {
+      await fetch("https://thevault-api.onrender.com/newaccount", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
