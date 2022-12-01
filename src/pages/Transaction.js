@@ -17,7 +17,7 @@ function Transaction() {
   // Checks if user is authenticated
   const getUser = useCallback(async () => {
     try {
-      await fetch(`https://thevault-api.onrender.com/transactions/${location.state}`, {
+      await fetch(`http://localhost:5000/transactions/${location.state}`, {
         method: "GET",
         headers: { authorization: sessionStorage.getItem("token") },
       })
@@ -84,7 +84,9 @@ function Transaction() {
             </div>
             <div class="card-body">
               <em>
-                <h6>ID: {tansactionDetails.parent_transaction_id}</h6>
+                <h6 className="bolder">
+                  ID: {tansactionDetails.parent_transaction_id}
+                </h6>
               </em>
               {tansactionDetails.transaction_status === "Successful" ? (
                 <h5
@@ -111,7 +113,7 @@ function Transaction() {
                 </h5>
               )}
 
-              <p class="card-text" style={{ paddingTop: "0" }}>
+              <p class="card-text bolder" style={{ paddingTop: "0" }}>
                 From
                 <br /> {tansactionDetails.s_account}
                 <br />
@@ -120,19 +122,29 @@ function Transaction() {
                 <br /> {tansactionDetails.r_account} <br />
                 {tansactionDetails.r_account_no} <br />
               </p>
-              <button className="btn blueViolet shadowB" type="button" 
-              onClick={() => {navigate("/transview", { state: 
-              {amount: tansactionDetails.transaction_amount,
-               sender: tansactionDetails.s_account,
-               senderNo: tansactionDetails.s_account_no,
-               receiver: tansactionDetails.r_account,
-               receiverNo: tansactionDetails.r_account_no,
-               time: tansactionDetails.transaction_time,
-               date: tansactionDetails.transaction_date,
-               status: tansactionDetails.transaction_status,
-               type: tansactionDetails.transaction_type,
-               id: tansactionDetails.parent_transaction_id
-              } })}}> View</button>
+              <button
+                className="btn blueViolet shadowB"
+                type="button"
+                onClick={() => {
+                  navigate("/transview", {
+                    state: {
+                      amount: tansactionDetails.transaction_amount,
+                      sender: tansactionDetails.s_account,
+                      senderNo: tansactionDetails.s_account_no,
+                      receiver: tansactionDetails.r_account,
+                      receiverNo: tansactionDetails.r_account_no,
+                      time: tansactionDetails.transaction_time,
+                      date: tansactionDetails.transaction_date,
+                      status: tansactionDetails.transaction_status,
+                      type: tansactionDetails.transaction_type,
+                      id: tansactionDetails.parent_transaction_id,
+                    },
+                  });
+                }}
+              >
+                {" "}
+                View
+              </button>
             </div>
             <div class="card-footer text-muted">
               Date:{" "}
