@@ -15,7 +15,7 @@ const Accounts = () => {
     try {
       const id = location.state;
 
-      await fetch(`http://localhost:5000/customersacc/${id}`, {
+      await fetch(`https://thevault-api.onrender.com/customersacc/${id}`, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       })
