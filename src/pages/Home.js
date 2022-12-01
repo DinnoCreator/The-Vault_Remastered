@@ -11,7 +11,7 @@ function Home() {
     <Fragment>
       <MainNavigation />
       <div className="box">
-        <h1 className="mb-4">Banking Made Easy and fun</h1>
+        <h1 className="mb-4">Banking Made Easy</h1>
         <h3>Download our mobile app</h3>
         <button className="btn fumub btn-lg ms-3 download-button" type="button">
           <i className="fab fa-apple"></i> Download
