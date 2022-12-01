@@ -18,7 +18,7 @@ function Transfer() {
   // Checks if user is authenticated
   const getUser = useCallback(async () => {
     try {
-      await fetch("http://localhost:5000/user", {
+      await fetch("https://thevault-api.onrender.com/user", {
         method: "GET",
         headers: { authorization: sessionStorage.getItem("token") },
       })
@@ -75,7 +75,7 @@ function Transfer() {
       const password = userPassword;
 
       //api call for sending the user data to the backend
-      await fetch("http://localhost:5000/transfers", {
+      await fetch("https://thevault-api.onrender.com/transfers", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -202,7 +202,7 @@ function Transfer() {
                     //api call to get receiver account name
                     if (e.target.value.length > 9) {
                       setRetrieving(true);
-                      await fetch("http://localhost:5000/receiver", {
+                      await fetch("https://thevault-api.onrender.com/receiver", {
                         method: "POST",
                         headers: {
                           "Content-Type": "application/json",
