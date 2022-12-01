@@ -18,7 +18,7 @@ function Transfer() {
   // Checks if user is authenticated
   const getUser = useCallback(async () => {
     try {
-      await fetch("https://thevault-api.onrender.com/user", {
+      await fetch("http://localhost:5000/user", {
         method: "GET",
         headers: { authorization: sessionStorage.getItem("token") },
       })
@@ -75,7 +75,7 @@ function Transfer() {
       const password = userPassword;
 
       //api call for sending the user data to the backend
-      await fetch("https://thevault-api.onrender.com/transfers", {
+      await fetch("http://localhost:5000/transfers", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -202,7 +202,7 @@ function Transfer() {
                     //api call to get receiver account name
                     if (e.target.value.length > 9) {
                       setRetrieving(true);
-                      await fetch("https://thevault-api.onrender.com/receiver", {
+                      await fetch("http://localhost:5000/receiver", {
                         method: "POST",
                         headers: {
                           "Content-Type": "application/json",
@@ -358,19 +358,25 @@ function Transfer() {
               </div>
             )}
             <div style={{ textAlign: "center", lineHeight: "1" }}>
-              <p>Transfer N{Number(amount).toLocaleString()}</p>
-              <p style={{paddingTop: "0"}}>
+              <p className="bolder">
+                Transfer N{Number(amount).toLocaleString()}
+              </p>
+              <p className="bolder" style={{ paddingTop: "0" }}>
                 from <br /> {location.state.accName} <br />{" "}
                 {location.state.accNo}
               </p>
 
-              <p style={{paddingTop: "0"}}>
+              <p className="bolder" style={{ paddingTop: "0" }}>
                 To <br />
                 {gotReceiver}
                 <br />
                 {receiver}
               </p>
-              <span style={{color: "green"}}>You'd be charged N{Number(amount * 0.5/100).toLocaleString()} for this transaction.</span>
+              <span style={{ color: "green" }}>
+                You'd be charged N
+                {Number((amount * 0.5) / 100).toLocaleString()} for this
+                transaction.
+              </span>
             </div>
 
             {/* Handles 4Digit pin */}
@@ -420,12 +426,11 @@ function Transfer() {
                 every: 5,
               }}
             />
-            
           </Modal.Body>
           <Modal.Footer>
             <button
               className="w-100 btn btn-lg btn-light fumub roborobo shadowB"
-              style={{marginBottom: "0"}}
+              style={{ marginBottom: "0" }}
               type="button"
               onClick={onSubmitForm}
             >
