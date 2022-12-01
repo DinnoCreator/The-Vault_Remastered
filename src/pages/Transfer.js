@@ -202,7 +202,7 @@ function Transfer() {
                     //api call to get receiver account name
                     if (e.target.value.length > 9) {
                       setRetrieving(true);
-                      await fetch(https://thevault-api.onrender.com/receiver", {
+                      await fetch("https://thevault-api.onrender.com/receiver", {
                         method: "POST",
                         headers: {
                           "Content-Type": "application/json",
