@@ -36,7 +36,7 @@ function ForgotPass() {
       const email = userEmail;
 
       //api call for sending the user data to the backend
-      await fetch("http://localhost:5000/codecheck", {
+      await fetch("https://thevault-api.onrender.com/codecheck", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -186,7 +186,7 @@ function ForgotPass() {
                     //api call to get receiver account name
                     if (e.target.value.length > 4) {
                       setConfirming(true);
-                      await fetch("http://localhost:5000/codechecka", {
+                      await fetch("https://thevault-api.onrender.com/codechecka", {
                         method: "POST",
                         headers: {
                           "Content-Type": "application/json",
