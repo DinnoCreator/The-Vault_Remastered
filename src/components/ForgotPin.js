@@ -36,7 +36,7 @@ function ForgotPin() {
       const no = userAccount;
 
       //api call for sending the user data to the backend
-      await fetch("http://localhost:5000/codecheck1", {
+      await fetch("https://thevault-api.onrender.com/codecheck1", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -78,7 +78,7 @@ function ForgotPin() {
       const password = userPassword;
 
       //api call for sending the user data to the backend
-      await fetch("http://localhost:5000/resetpass1", {
+      await fetch("https://thevault-api.onrender.com/resetpass1", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -200,7 +200,7 @@ function ForgotPin() {
                     //api call to get receiver account name
                     if (e.target.value.length > 4) {
                       setConfirming(true);
-                      await fetch("http://localhost:5000/codechecka1", {
+                      await fetch("https://thevault-api.onrender.com/codechecka1", {
                         method: "POST",
                         headers: {
                           "Content-Type": "application/json",
