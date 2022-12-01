@@ -53,7 +53,7 @@ function Create() {
       const password = userPassword;
 
       //api call for sending the user data to the backend
-      await fetch("http://localhost:5000/verify", {
+      await fetch("https://thevault-api.onrender.com/verify", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
