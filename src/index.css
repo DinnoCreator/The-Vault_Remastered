@@ -366,3 +366,7 @@ table th {
   background-color: #896abe;
   color: white;
 }
+
+.bolder{
+  font-weight: bolder;
+}
