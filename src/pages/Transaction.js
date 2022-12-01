@@ -17,7 +17,7 @@ function Transaction() {
   // Checks if user is authenticated
   const getUser = useCallback(async () => {
     try {
-      await fetch(`http://localhost:5000/transactions/${location.state}`, {
+      await fetch(`https://thevault-api.onrender.com/transactions/${location.state}`, {
         method: "GET",
         headers: { authorization: sessionStorage.getItem("token") },
       })
