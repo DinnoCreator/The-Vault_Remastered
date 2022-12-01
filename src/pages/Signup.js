@@ -45,7 +45,7 @@ function Signuponline() {
       const password = userPassword;
 
       //api call for sending the user data to the backend
-      await fetch("http://localhost:5000/signup", {
+      await fetch("https://thevault-api.onrender.com/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
