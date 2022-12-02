@@ -256,7 +256,7 @@ function ForgotPin() {
     return (
       <div className="form-signin shadowB" style={{ marginTop: "3%" }}>
         <div style={{ color: "green", display: "block" }}>
-          <span>Verified... Reset Your Password.</span>
+          <span>Verified... Reset Your Pin.</span>
         </div>
         <form onSubmit={onSubmitForm1}>
           <div className="form-floating">
@@ -293,7 +293,7 @@ function ForgotPin() {
               id="flexCheckDefault"
             />
             <label className="form-check-label" htmlFor="flexCheckDefault">
-              Show Password
+              Show Pin
             </label>
           </div>
 
