@@ -16,6 +16,7 @@ function Verify() {
   const [confirmationCode, setConfirmationCode] = useState("");
   const [loginError, setLoginError] = useState("");
   const [dip, setDip] = useState("none");
+  const [dip1, setDip1] = useState("none");
   const [loading, setLoading] = useState(false);
 
   let navigate = useNavigate();
@@ -25,6 +26,7 @@ function Verify() {
     e.preventDefault();
     try {
       setLoading(true);
+      setDip1("block");
       //values from form
       const email = location.state;
       const code = confirmationCode;
@@ -41,12 +43,14 @@ function Verify() {
         .then((res) => {
           if (res.status === 401) {
             setDip("block");
+            setDip1("none");
             setLoading(false);
             return setLoginError(
               "Email does not have a verification code or code expired, please register again..."
             );
           } else if (res.status === 403) {
             setDip("block");
+            setDip1("none");
             setLoading(false);
             return setLoginError("Invalid verification code...");
           } else {
@@ -115,7 +119,7 @@ function Verify() {
             {loading ? (
               <>
                 <div
-                  style={{ display: "inline-block" }}
+                  style={{ display: { dip1 } }}
                   className="loader"
                 ></div>
               </>
