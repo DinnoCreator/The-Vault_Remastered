@@ -109,7 +109,7 @@ const CustomerTransaction = () => {
                 </h5>
               )}
 
-              <p class="card-text" style={{ paddingTop: "0" }}>
+              <p class="card-text bolder" style={{ paddingTop: "0" }}>
                 From
                 <br /> {tansactionDetails.s_account}
                 <br />
