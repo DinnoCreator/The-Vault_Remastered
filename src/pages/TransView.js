@@ -41,7 +41,7 @@ const TransView = () => {
             </div>
             <div class="card-body">
               <em>
-                <h6>ID: {location.state.id}</h6>
+                <h6 className="bolder">ID: {location.state.id}</h6>
               </em>
               {location.state.status === "Successful" ? (
                 <h5
@@ -68,7 +68,7 @@ const TransView = () => {
                 </h5>
               )}
 
-              <p class="card-text" style={{ paddingTop: "0" }}>
+              <p class="card-text bolder" style={{ paddingTop: "0" }}>
                 From
                 <br /> {location.state.sender}
                 <br />
