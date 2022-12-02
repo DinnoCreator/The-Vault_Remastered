@@ -118,6 +118,15 @@ const CustomerTransaction = () => {
                 <br /> {tansactionDetails.r_account} <br />
                 {tansactionDetails.r_account_no} <br />
               </p>
+              <div
+              class="card-header"
+              style={{
+                display:
+                  tansactionDetails.transaction_status === "Failed"
+                    ? "none"
+                    : "block",
+              }}
+              >
               <button className="btn blueViolet shadowB" type="button" 
               onClick={async (e) => {
                 try {
@@ -141,6 +150,7 @@ const CustomerTransaction = () => {
                   console.error(error);
                 }
               }}> Reverse Transaction</button>
+             </div>
             </div>
             <div class="card-footer text-muted">
               Date:{" "}
