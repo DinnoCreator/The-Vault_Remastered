@@ -76,7 +76,7 @@ const Accounts = () => {
                     setDip("block");
                     const accNo = data.account_no;
 
-                    await fetch("http://localhost:5000/status", {
+                    await fetch("https://thevault-api.onrender.com/status", {
                       method: "PUT",
                       headers: {
                         "Content-Type": "application/json",
